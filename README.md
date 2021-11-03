@@ -15,22 +15,31 @@ application that creates a platform for access of current happenings and vital i
  6. View various Businesss in the hood
  7. Search for Businesses
 
-## SetUp / Installation Requirements
+## SetUp / Installation 
 
 ## Prerequisites
-python3
+python3.8
 Virtual environment named gram
 Django 2.2
 Boootstrap4
 Heruko
-To get the app
-In your terminal: $ git clone https://github.com/hope-mbuthye38/hoodygosi.git$ cd Awwards $ python3.8-m venv --without-pip virtual $ source virtual/bin/activate $ curl https://bootstrap.pypa.io/get-pip.py | python $ python3.8 manage.py runserver
+
+## Requirements
+To get the app;
+In your terminal: $ git clone https://github.com/hope-mbuthye38/hoodygosi.git$ cd Awwards $ 
+
+python3.8-m venv --without-pip virtual $ source virtual/bin/activate $ curl https://bootstrap.pypa.io/get-pip.py | python $ python3.8 manage.py runserver
 
 ## Technologies Used
 Python3.8
+
 django 2.2
+
 Heroku for deployment
+
 # Bugs
 None
-License
+
+## License
 MIT ©2021
+copyright @ Hope Mbuthye 2021
