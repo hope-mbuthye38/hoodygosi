@@ -1,0 +1,26 @@
+{% extends "neighbourhood/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+		  <img class="pic"  src="{{ user.profile.image.url}}" style="border-radius:50%; height: 50px; width:50px;" alt="Big Sur">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+		  <p class="text-secondary">{{ user.profile.bio }}</p>
+		  <p class="text-secondary">{{ user.profile.kijiji }}</p>
+        </div>
+      </div>
+	  <div class="container">
+	  <form method="POST" enctype="multipart/form-data">
+	             {% csrf_token %}
+	             <fieldset class ="form-group">
+	                 <legend class = "border-bottom mb-6">Update Profile Or Change Kijiji </legend>
+	                    {{ p_form | crispy }}
+	             </fieldset>
+	             <div class="form-group">
+	                 <button class ="btn btn-outline-info" type="submit">Update</button>
+	             </div>
+    </div>
+</div>
+{% endblock content %}
