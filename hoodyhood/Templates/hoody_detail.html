@@ -1,0 +1,81 @@
+{%extends 'neighbourhood/base.html'%}
+{% load bootstrap4 %}
+{% load static %}
+{% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock %}
+{% block content %}
+	<div class="container-fluid">
+
+		<div class="container">
+			<div class="jumbtron">
+				<h2 class="title">{{ object.location }}</h2>
+				 <p class="article-content">{{ object.description }}</p>
+				 <p>Resident Count {{ object.profile.all | length }}</p>
+			 </div>
+	     </div>
+<!---News-->
+		<div class="container">
+			<div class="row">
+			<div class="col-sm-6">
+				<legend>Latest Happennings</legend>
+                   <div class="card">
+
+							{% for new in object.news.all %}
+							     <span>{{ new.author}}
+									<small class="text-muted">{{new.date_posted | date:"F d, Y" }}</small>
+								</span>
+							   <p>{{ new.cation }}</p>
+							{% endfor %}
+				  </div>
+			  </div>
+				<div class="col-sm-6">
+					<legend>Ammenities</legend>
+						<div class="card">
+
+										{% for p in object.police.all %}
+									        <p>{{ p.station }}</p>
+											<p>{{ p.contacts }}</p>
+										{% endfor %}
+
+										{% for h in object.hospital.all %}
+									        <p>{{ h.name }}</p>
+											<p>{{ h.contacts }}</p>
+										{% endfor %}
+						  </div>
+				 </div>
+			 </div>
+			</div>
+<div class="container">
+
+	<legend>Business</legend>
+	<div class="row">
+	{% for b in object.business.all %}
+	<div class="col-sm-3">
+		<div class="card border-primary mb-3" style="max-width: 18rem;">
+			<div class="card-header"><h5>{{ b.name }}</h5></div>
+			<div class="card-body text-primary">
+			  <p class="card-title">{{b.details}}</p>
+			  <p class="card-text">{{b.contacts}}</p>
+			</div>
+	</div>
+    </div>
+	{% endfor %}
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+	<article class="Profile">
+		<legend>List of Neighbours</legend>
+		{% for m in object.profile.all %}
+		<img class="pic"  src="{{ m.image.url}}" style="border-radius:50%; height: 50px; width:50px;" alt="Big Sur">
+	        <span>{{ m.user.username }}</span>
+		{% endfor %}
+	</article>
+</div>
+</div>
+</div>
+<footer></footer>
+{% endblock %}
