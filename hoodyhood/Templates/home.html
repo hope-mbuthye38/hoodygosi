@@ -1,0 +1,31 @@
+{%extends 'neighbourhood/base.html'%}
+{% load bootstrap4 %}
+
+         {% block content %}
+          {{block.super}}
+<div style="text-align:center" class="container">
+<div class="row">
+
+          {% for kijiji in kijijis %}
+
+           <div class="col-sm-4">
+          <div class="card text-center" style="width: 18rem;">
+              <img class="card-img-top" src="{{ kijiji.image.url}}" alt="Card image cap">
+
+                  <div class="card-body">
+                    <h3 class="card-text">{{ kijiji.location }}</h3>
+                    <button type="button" class="btn btn-outline-primary"><a href="{% url 'kijiji-detail' kijiji.id %}">Join</a></button>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="container">
+    <legend>Locate Your Mtaa</legend>
+    <div style="text-align:center;" class="container" >
+ <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15955.16770890185!2d36.777940119775394!3d-1.2996524999999954!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ske!4v1540208567321" width="800" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+ </div>
+         {% endblock %}
