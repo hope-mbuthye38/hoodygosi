@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Kijiji, News, Business, Police, Hospital,Profile
+from .models import estatedomin, News, Business, Police, Hospital,Profile
 
 # Register your models here.
-admin.site.register(Kijiji)
+admin.site.register(estatedomin)
 admin.site.register(News)
 admin.site.register(Business)
 admin.site.register(Police)
