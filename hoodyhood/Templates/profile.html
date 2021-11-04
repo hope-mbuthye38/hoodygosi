@@ -8,14 +8,14 @@
           <h2 class="account-heading">{{ user.username }}</h2>
           <p class="text-secondary">{{ user.email }}</p>
 		  <p class="text-secondary">{{ user.profile.bio }}</p>
-		  <p class="text-secondary">{{ user.profile.kijiji }}</p>
+		  <p class="text-secondary">{{ user.profile.estatedomin}}</p>
         </div>
       </div>
 	  <div class="container">
 	  <form method="POST" enctype="multipart/form-data">
 	             {% csrf_token %}
 	             <fieldset class ="form-group">
-	                 <legend class = "border-bottom mb-6">Update Profile Or Change Kijiji </legend>
+	                 <legend class = "border-bottom mb-6">Update Profile Or Change estatedomin </legend>
 	                    {{ p_form | crispy }}
 	             </fieldset>
 	             <div class="form-group">
