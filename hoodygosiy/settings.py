@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'hoodygosiy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': config ('mtaani'),
+        'NAME': config ('domini'),
         'USER': config('hope'),
         'PASSWORD': config('makagikiki'),
         'HOST': config('DB_HOST'),
